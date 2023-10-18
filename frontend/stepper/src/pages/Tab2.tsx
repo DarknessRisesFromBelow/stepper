@@ -9,7 +9,7 @@ const Tab2: React.FC = () => {
   return (
     <IonPage>
       <IonContent fullscreen>
-        <Leaderboard elements={[React.createElement("User", {name: "1", pfpURL: "2", steps: 3})]}/>
+        <Leaderboard/>
       </IonContent>
     </IonPage>
   );
