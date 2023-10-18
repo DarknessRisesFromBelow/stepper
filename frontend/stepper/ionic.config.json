@@ -1,0 +1,7 @@
+{
+  "name": "stepper",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
