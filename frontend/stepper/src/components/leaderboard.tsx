@@ -7,7 +7,14 @@ export default class Leaderboard extends React.Component
 
 	elements:any[] = [];
 
+
 	componentDidMount()
+	{
+		this.createElementsFromString("firstUser,https://www.law.berkeley.edu/wp-content/uploads/2015/04/Blank-profile.png,154");
+	}
+
+
+	IonViewWillEnter()
 	{
 		this.createElementsFromString("firstUser,https://www.law.berkeley.edu/wp-content/uploads/2015/04/Blank-profile.png,154");
 	}
@@ -31,15 +38,27 @@ export default class Leaderboard extends React.Component
 		this.render();
 	}
 
+	outputAndReturnElement()
+	{
+		console.log("got element that symbolizes no objects")
+
+		return <p>there are no objects to render</p>
+	}
+
 	render()
 	{
+		const thing = ()=>{console.log("getting text saying there are objects"); return <p>new component rendering</p>}
+
 		console.log("there are " + this.elements.length + " elements to render");
 		console.log(this.elements);
-		return <div><IonList>
-            <IonListHeader><div className="firstHeader">Name</div><div className="secondHeader">steps</div></IonListHeader>
-            {this.elements.length > 0 ? <IonItem>{this.elements}</IonItem> : <p>there are no objects to render</p>}
-            {this.elements.map(el=> <IonItem key={el.index}><p>el</p></IonItem>)}
-            </IonList>
-            </div>
+		return <div id="page">
+			<IonPage>
+			<IonList>
+				<IonListHeader><div className="firstHeader">Name</div><div className="secondHeader">steps</div></IonListHeader>
+				{this.elements.length > 0 ? thing() : this.outputAndReturnElement()}
+				{this.elements.map(el=> <IonItem key={el.index}>{el}</IonItem>)}
+			</IonList>
+			</IonPage>
+		</div>
 	}
 }
