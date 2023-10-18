@@ -1,0 +1,19 @@
+.item
+{
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+	contain: none;
+	overflow: visible;
+}
+
+.firstHeader
+{
+	position: absolute;
+	left: 10vw;
+}
+
+.secondHeader
+{
+	position: absolute;
+	right: 13vw;	
+}

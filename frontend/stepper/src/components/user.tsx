@@ -4,18 +4,19 @@ import './user.css';
 interface Props {
   name: string;
   imgURL: string;
-  bio: string; 
   steps: number;
 }
 
-const user: React.FC<Props> = ({ name, imgURL, bio, steps}) => {
+const pfpSize = 48;
+
+const User: React.FC<Props> = ({ name, imgURL, steps}) => {
   return (
     <div className="user">
-      <img src={imgURL}></img>
-      <p>{name}</p>
+      <img src={imgURL} width={pfpSize} height={pfpSize}></img>
+      <label>{name}</label>
       <p>{steps}</p>
     </div>
   );
 };
 
-export default user;
+export default User;
