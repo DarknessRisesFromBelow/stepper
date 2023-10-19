@@ -12,13 +12,16 @@ export default class Leaderboard extends React.Component<any, {elements:any[]}>
 
 	componentDidMount()
 	{
-		this.createElementsFromString("firstUser,https://www.law.berkeley.edu/wp-content/uploads/2015/04/Blank-profile.png,154");
-	}
-
-
-	IonViewWillEnter()
-	{
-		this.createElementsFromString("firstUser,https://www.law.berkeley.edu/wp-content/uploads/2015/04/Blank-profile.png,154");
+		fetch("https://arriving-strictly-halibut.ngrok-free.app/getSteps", {method: 'GET',headers: {"ngrok-skip-browser-warning": "69420",},}).then(response=>
+			{
+				response.text().then(
+					responseString=>
+					{ 
+						this.createElementsFromString(responseString)
+					}
+				);
+			}
+		);
 	}
 
 	createElementsFromString(text:string)
@@ -29,7 +32,7 @@ export default class Leaderboard extends React.Component<any, {elements:any[]}>
 		for(let i = 0; i < stuff.length / dataSize; i++)
 		{
 			const shift = (i * dataSize);
-			const element = React.createElement("user", {name: stuff[shift], imgURL: stuff[shift + 1], steps: +stuff[shift + 2], index: i});						
+			const element = React.createElement(User, {name: stuff[shift], imgURL: stuff[shift + 1], steps: +stuff[shift + 2], index: i});						
 			elements.push(element);
 		}
 		this.setState({elements: elements});
