@@ -152,7 +152,7 @@ namespace stepper.ServerHandling
 				{
 					try
 					{
-						Console.WriteLine("error encountered.\nerror:\t{0}\ncontinuing...", e.InnerException.Message);
+						Console.WriteLine("error encountered.\nerror:\t{0}\ncontinuing...", e);
 					}
 					catch(Exception ex)
 					{

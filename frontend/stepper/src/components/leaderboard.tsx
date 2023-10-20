@@ -12,7 +12,7 @@ export default class Leaderboard extends React.Component<any, {elements:any[]}>
 
 	componentDidMount()
 	{
-		fetch("https://arriving-strictly-halibut.ngrok-free.app/getSteps", {method: 'GET',headers: {"ngrok-skip-browser-warning": "69420",},}).then(response=>
+		fetch("https://arriving-strictly-halibut.ngrok-free.app/getLeaderboard", {method: 'GET',headers: {"ngrok-skip-browser-warning": "69420",},}).then(response=>
 			{
 				response.text().then(
 					responseString=>

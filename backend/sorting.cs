@@ -21,7 +21,7 @@ namespace stepper.sorting
 				
 				try
 				{
-					if (ulong.Parse(arr[index].Split(" : ")[4]) >= ulong.Parse(arr[index - 1].Split(" : ")[4]))
+					if (ulong.Parse(arr[index].Split(",")[2]) >= ulong.Parse(arr[index - 1].Split(",")[2]))
 						index++;
 					else {
 						string temp = arr[index];
