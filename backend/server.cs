@@ -134,8 +134,8 @@ namespace stepper.ServerHandling
 						}
 						else if(sRequest.Contains("setSteps"))
 						{
-							string[] data = sRequest.Replace("setSteps", "").Split("|||");
-							account.accounts[int.Parse(data[1])].setSteps(int.Parse(data[1]));
+							string[] data = sRequest.Replace("setSteps", "").Split(",");
+							account.accounts[int.Parse(data[1])].setSteps(int.Parse(data[0]));
 							sendData("successfully set step count", ref sslStream);
 						}
 						else if(sRequest.Contains("getLeaderboard"))
@@ -150,6 +150,7 @@ namespace stepper.ServerHandling
 				}
 				catch(Exception e)
 				{
+					sendData("error occured, sorry!", ref sslStream);
 					try
 					{
 						Console.WriteLine("error encountered.\nerror:\t{0}\ncontinuing...", e);

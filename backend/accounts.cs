@@ -10,7 +10,7 @@ namespace stepper.accounts
 
 		public account(string pfpURL, string username)
 		{
-			this.id = 0;
+			this.id = accounts.Count;
 			this.steps = 0;
 			this.pfpURL = pfpURL;
 			this.username = username;

@@ -23,7 +23,7 @@ export default class Leaderboard extends React.Component<any, {elements:any[]}>
 			}
 		);
 
-		this.createElementsFromString("meow,https://www.law.berkeley.edu/wp-content/uploads/2015/04/Blank-profile.png,154")
+		//this.createElementsFromString("meow,https://www.law.berkeley.edu/wp-content/uploads/2015/04/Blank-profile.png,154")
 
 	}
 
@@ -35,7 +35,7 @@ export default class Leaderboard extends React.Component<any, {elements:any[]}>
 		for(let i = 0; i < stuff.length / dataSize; i++)
 		{
 			const shift = (i * dataSize);
-			const element = React.createElement(User, {name: stuff[shift], imgURL: stuff[shift + 1], steps: +stuff[shift + 2], index: i});						
+			const element = React.createElement(User, {name: stuff[shift + 1], imgURL: stuff[shift], steps: +stuff[shift + 2], index: i});						
 			elements.push(element);
 		}
 		this.setState({elements: elements});

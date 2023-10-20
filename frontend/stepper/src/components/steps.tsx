@@ -10,27 +10,39 @@ class Steps extends React.Component<any, {steps:number}>
 	{
 		super(health, props);
 		this.health = Health;
-		this.state = {steps: 0};
+		this.state = {steps: 100};
 	}
 
 	componentDidMount()
 	{
-		this.getSteps();
+		this.health.requestAuthorization([
+			"distance",
+			"nutrition", 
+			{
+				read: ["steps", "height", "weight"],  
+				write: ["height", "weight"], 
+			},
+		]).then(data => {this.getSteps();});
 		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 	}
 
 	getSteps()
 	{
+		console.log("startDate : " + new Date(new Date().setUTCHours(0,0,0,0)))
+		console.log("endDate : " + new Date());
 		try
-		{
-			this.health.query(
-			{
-				startDate: new Date(new Date().setUTCHours(0,0,0,0)),
-				endDate: new Date(),
-				dataType: 'steps'
-			}).then(data=>{
-				console.log(data);
-				//this.setState({steps: data});
+		{		
+			this.health.promptInstallFit().then(data1=>{
+				this.health.query(
+				{
+					startDate: new Date(new Date().setUTCHours(0,0,0,0)),
+					endDate: new Date(),
+					dataType: 'steps'
+				}).then(data=>{
+					console.log(data);
+					this.setState({steps: +data[0].value});
+					fetch("https://arriving-strictly-halibut.ngrok-free.app/setSteps" + this.state.steps + "," + global.uid,{method: 'GET',headers: {"ngrok-skip-browser-warning": "69420",},});
+				})
 			})
 		}
 		catch
