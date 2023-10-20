@@ -1,0 +1,23 @@
+#container
+{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 25vh;
+	left: 25vw;
+	width: 50vw;
+}
+
+#container input
+{
+	border-style: dotted;
+	border-width: 3px;
+	border-color: var(--color);
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	height: 4vh;
+	background-color: transparent;
+}

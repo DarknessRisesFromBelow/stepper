@@ -11,7 +11,6 @@ global.shouldUpdate = false;
 
 const Tab2: React.FC = () => {
   useEffect(()=>{
-      fetch("https://arriving-strictly-halibut.ngrok-free.app/CreateUserNAME1,https://www.law.berkeley.edu/wp-content/uploads/2015/04/Blank-profile.png");    
       console.log("something changed")
     }) 
 

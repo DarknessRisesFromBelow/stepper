@@ -6,12 +6,6 @@ import Steps from '../components/steps'
 
 
 const Tab1: React.FC = () => {
-  useEffect(()=>
-  {
-      fetch("https://arriving-strictly-halibut.ngrok-free.app/CreateUserNAME1,https://www.law.berkeley.edu/wp-content/uploads/2015/04/Blank-profile.png");    
-  })
-
-
   return (
     <IonPage>
       <IonContent fullscreen>

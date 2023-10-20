@@ -14,6 +14,7 @@ import { IonReactRouter } from '@ionic/react-router';
 import { heartCircleOutline, walk, trophyOutline } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
+import Login from './pages/login'
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -35,13 +36,15 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 
 setupIonicReact();
-fetch("https://arriving-strictly-halibut.ngrok-free.app/CreateUserNAME1,https://www.law.berkeley.edu/wp-content/uploads/2015/04/Blank-profile.png");
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
+          <Route exact path="/login">
+            <Login />
+          </Route>
           <Route exact path="/tab1">
             <Tab1 />
           </Route>
@@ -49,7 +52,7 @@ const App: React.FC = () => (
             <Tab2 />
           </Route>
           <Route exact path="/">
-            <Redirect to="/tab1" />
+            <Redirect to="/login" />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
