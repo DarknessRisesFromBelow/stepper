@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Health } from '@ionic-native/health';
+import './steps.css'
 
 class Steps extends React.Component<any, {steps:number}>
 {
@@ -15,6 +16,7 @@ class Steps extends React.Component<any, {steps:number}>
 	componentDidMount()
 	{
 		this.getSteps();
+		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 	}
 
 	getSteps()
@@ -39,7 +41,12 @@ class Steps extends React.Component<any, {steps:number}>
 
 	render()
 	{
-		return <p>{this.state.steps}</p>
+		return <div className="background">
+		<div className="container">
+			<input type="range" min={0} max = {10000} value={this.state.steps} id="rangeSlider"/>
+		</div>
+			<h1 id="barText">you have made {this.state.steps} steps today, is this all you got?</h1>
+		</div>
 	}
 
 }

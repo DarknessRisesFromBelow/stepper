@@ -10,6 +10,7 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonContent fullscreen>
         <Steps/>
+        <div className="bgcolor"><h1>placeholder for what would probably be graphs</h1></div>
       </IonContent>
     </IonPage>
   );

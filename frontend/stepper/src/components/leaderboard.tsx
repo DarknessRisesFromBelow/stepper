@@ -22,6 +22,9 @@ export default class Leaderboard extends React.Component<any, {elements:any[]}>
 				);
 			}
 		);
+
+		this.createElementsFromString("meow,https://www.law.berkeley.edu/wp-content/uploads/2015/04/Blank-profile.png,154")
+
 	}
 
 	createElementsFromString(text:string)

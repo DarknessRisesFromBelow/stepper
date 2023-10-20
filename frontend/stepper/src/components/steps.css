@@ -1,0 +1,145 @@
+.container
+{
+	rotate: -90deg;
+	position: absolute;
+	bottom: 13vw;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+    align-items: center;
+}
+
+
+@media (prefers-color-scheme: dark)
+{
+	.background
+	{
+		position: relative;
+		background-color: var(--ion-color-step-150);
+		height: 50vh;
+		width: 90vw;
+		left: 5vw;
+		top: 3vh;
+		border-radius: 1em;
+		display: flex;
+		justify-content: center;
+	}
+}
+	
+@media (prefers-color-scheme: light)
+{
+	.background
+	{
+		position: relative;
+		background-color: var(--ion-color-step-750);
+		height: 50vh;
+		width: 90vw;
+		left: 5vw;
+		top: 3vh;
+		border-radius: 1em;
+	}
+}
+
+#barText
+{
+	position: relative;
+	top: 10vh;
+	padding-left: 9vw;
+	padding-right: 7vw;
+	display: flex;
+	justify-content: center;
+	font-size: 2em;
+	z-index: 9999;
+}
+
+input[type="range"] { 
+	background: transparent;
+	border-radius: 1em;
+	display: flex;
+	justify-content: center;
+    margin: auto;
+    -webkit-appearance: none;
+    position: absolute;
+    right: -43vh;
+    overflow: hidden;
+    height: 90vw;
+    width: 50vh;
+    cursor: pointer;
+}
+
+::-webkit-slider-runnable-track {
+	visibility: none; 
+	-webkit-appearance: none;
+    background: transparent;
+    width: 0;
+    height: 0;
+    border-radius: .7em;
+}
+
+
+/*
+ * 1. Set to 0 width and remove border for a slider without a thumb
+ * 2. Shadow is negative the full width of the input and has a spread 
+ *    of the width of the input.
+ */
+::-webkit-slider-thumb {
+	visibility: none; 
+	border-radius: .7em;
+    -webkit-appearance: none;
+    width: 0px; /* 1 */
+    height: 0vh;
+    box-shadow: -200px 0 0 200px dodgerblue; /* 2 */
+    border: 5px solid dodgerblue; /* 1 */
+}
+
+::-moz-range-track {
+    height: 40px;
+    border-radius: .7em;
+    background: transparent;
+}
+
+::-moz-range-thumb {
+	visibility: none; 
+	-webkit-appearance: none;
+	border-radius: .7em;
+    height: 0px;
+    width: 0px;
+    border: 3px solid transparent;
+    border-radius: 0 !important;
+    box-shadow: -200px 0 0 200px transparent;
+    box-sizing: border-box;
+}
+
+::-ms-fill-lower { 
+	border-radius: .7em;
+    background: dodgerblue;
+}
+
+::-ms-thumb {
+	visibility: none; 
+	-webkit-appearance: none;
+    border: 5px solid transparent;
+    height: 40px;
+    width: 20px;
+    box-sizing: border-box;
+	border-radius: .7em;
+}
+
+::-ms-ticks-after { 
+    display: none; 
+}
+
+::-ms-ticks-before { 
+    display: none; 
+}
+
+::-ms-track { 
+    color: transparent;
+    height: 40px;
+    border: none;
+    border-radius: .7em;
+}
+
+::-ms-tooltip { 
+    display: none;
+}
