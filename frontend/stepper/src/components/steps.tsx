@@ -35,7 +35,7 @@ class Steps extends React.Component<any, {steps:number}>
 			this.health.promptInstallFit().then(data1=>{
 				this.health.query(
 				{
-					startDate: new Date(new Date().setUTCHours(0,0,0,0)),
+					startDate: new Date(new Date().getTime() - 24*60*60*1000) ,
 					endDate: new Date(),
 					dataType: 'steps'
 				}).then(data=>{
