@@ -10,7 +10,7 @@ class Steps extends React.Component<any, {steps:number}>
 	{
 		super(health, props);
 		this.health = Health;
-		this.state = {steps: 100};
+		this.state = {steps: 0};
 	}
 
 	componentDidMount()
@@ -40,8 +40,12 @@ class Steps extends React.Component<any, {steps:number}>
 					dataType: 'steps'
 				}).then(data=>{
 					console.log(data);
-					this.setState({steps: +data[0].value});
-					fetch("https://arriving-strictly-halibut.ngrok-free.app/setSteps" + this.state.steps + "," + global.uid,{method: 'GET',headers: {"ngrok-skip-browser-warning": "69420",},});
+					let localSteps = 0;
+					for(let elementId  = 0; elementId < data.length; elementId++)
+					{
+						localSteps += +data[elementId].value;
+					}
+					this.setState({steps: localSteps});
 				})
 			})
 		}
@@ -53,6 +57,7 @@ class Steps extends React.Component<any, {steps:number}>
 
 	render()
 	{
+		fetch("https://arriving-strictly-halibut.ngrok-free.app/setSteps" + this.state.steps + "," + global.uid,{method: 'GET',headers: {"ngrok-skip-browser-warning": "69420",},});
 		return <div className="background">
 		<div className="container">
 			<input type="range" min={0} max = {10000} value={this.state.steps} id="rangeSlider"/>

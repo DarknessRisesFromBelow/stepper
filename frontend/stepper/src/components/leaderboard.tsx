@@ -53,12 +53,10 @@ export default class Leaderboard extends React.Component<any, {elements:any[]}>
 		const thing = ()=>{console.log("getting text saying there are objects"); return <p>new component rendering</p>}
 		console.log("there are " + this.state.elements.length + " elements to render");
 		return <div id="page">
-			<IonPage>
-				<IonList>
-					<IonListHeader><div className="firstHeader">Name</div><div className="secondHeader">steps</div></IonListHeader>
-					{this.state.elements.map(el=> <IonItem key={el.index}>{el}</IonItem>)}
-				</IonList>
-			</IonPage>
+			<IonList>
+				<IonListHeader><div className="firstHeader">Name</div><div className="secondHeader">steps</div></IonListHeader>
+				{this.state.elements.map(el=> <IonItem key={el.index}>{el}</IonItem>)}
+			</IonList>
 		</div>
 	}
 }

@@ -146,6 +146,8 @@ namespace stepper.ServerHandling
 						{
 							sendData("TEST DATA,https://www.law.berkeley.edu/wp-content/uploads/2015/04/Blank-profile.png,1234,TEST DATA,https://www.law.berkeley.edu/wp-content/uploads/2015/04/Blank-profile.png,1234,TEST DATA,https://www.law.berkeley.edu/wp-content/uploads/2015/04/Blank-profile.png,1234", ref sslStream);
 						}
+						sslStream.Close();
+						client.Close();
 					}
 				}
 				catch(Exception e)
