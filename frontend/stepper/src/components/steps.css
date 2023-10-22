@@ -40,6 +40,7 @@
 	}
 }
 
+/*
 #barText
 {
 	position: relative;
@@ -51,6 +52,7 @@
 	font-size: 2em;
 	z-index: 9999;
 }
+*/
 
 input[type="range"] { 
 	background: transparent;
@@ -88,8 +90,47 @@ input[type="range"] {
     -webkit-appearance: none;
     width: 0px; /* 1 */
     height: 0vh;
-    box-shadow: -200px 0 0 200px dodgerblue; /* 2 */
-    border: 5px solid dodgerblue; /* 1 */
+    box-shadow: -200px 0 0 200px #043d73; /* 2 */
+    border: 5px solid #043d73; /* 1 */
+}
+
+.customHeightWave
+{
+	position: absolute;
+	height: 30px;
+	width: 90vw;
+	bottom: calc(((var(--stepCount) / 10000) * 48) * 1vh);
+}
+
+.stepsCount
+{
+	font-size: 3em !important;
+    background: linear-gradient(315deg, rgba(204,16,16,1) 45%, rgba(121,50,100,1) 64%, rgba(195, 99, 180,1) 100%);
+    /* background: -webkit-linear-gradient(#eee, #333); */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.siteHeadCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 2vw;
+    align-items: center;
+    overflow: scroll;
+}
+
+.siteHeadCenter > H1
+{	
+	margin-top: -1vh;
+	padding-left: 3.8vw;
+	font-size: 2.7em;
+	font-weight: bolder;
+	color : white;
+	width: 80vw;
+	z-index: 999;
 }
 
 ::-moz-range-track {
@@ -112,7 +153,7 @@ input[type="range"] {
 
 ::-ms-fill-lower { 
 	border-radius: .7em;
-    background: dodgerblue;
+    background: #043d73;
 }
 
 ::-ms-thumb {

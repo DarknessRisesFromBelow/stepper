@@ -3,6 +3,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/rea
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab1.css';
 import Steps from '../components/steps'
+import Wave from '../components/wave'
 
 
 const Tab1: React.FC = () => {

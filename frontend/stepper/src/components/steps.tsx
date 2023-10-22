@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Health } from '@ionic-native/health';
 import './steps.css'
+import Wave from './wave'
 
 class Steps extends React.Component<any, {steps:number}>
 {
@@ -57,12 +58,24 @@ class Steps extends React.Component<any, {steps:number}>
 
 	render()
 	{
+		const r = document.querySelector(":root") as HTMLElement;
+		if(r !== null && r !== undefined)
+		{
+			r.style.setProperty('--stepCount', '' + this.state.steps);
+			const rs = getComputedStyle(r);
+			console.log(rs.getPropertyValue('--stepCount'))
+		}
 		fetch("https://arriving-strictly-halibut.ngrok-free.app/setSteps" + this.state.steps + "," + global.uid,{method: 'GET',headers: {"ngrok-skip-browser-warning": "69420",},});
 		return <div className="background">
 		<div className="container">
 			<input type="range" min={0} max = {10000} value={this.state.steps} id="rangeSlider"/>
 		</div>
-			<h1 id="barText">you have made {this.state.steps} steps today, is this all you got?</h1>
+		<div className="siteHeadCenter">
+			<h1 id="barText">you have made </h1><h1 className="stepsCount">{this.state.steps} steps</h1><h1> today, is this all you got?</h1>
+		</div>
+		<div className="customHeightWave">
+		<Wave/>
+		</div>
 		</div>
 	}
 
