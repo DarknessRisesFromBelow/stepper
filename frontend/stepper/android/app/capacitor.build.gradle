@@ -17,8 +17,10 @@ dependencies {
     implementation project(':capacitor-health-fit')
     implementation "com.google.android.gms:play-services-fitness:21.1.0"
     implementation "com.google.android.gms:play-services-auth:20.2.0"
+    implementation "com.onesignal:OneSignal:5.0.0-beta4"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10"
 }
-
+apply from: "../../node_modules/onesignal-cordova-plugin/build-extras-onesignal.gradle"
 
 if (hasProperty('postBuildExtras')) {
   postBuildExtras()

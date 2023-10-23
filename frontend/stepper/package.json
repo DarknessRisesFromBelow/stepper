@@ -27,6 +27,7 @@
     "cordova-plugin-health": "^2.1.0",
     "history": "^4.9.0",
     "ionicons": "^7.0.0",
+    "onesignal-cordova-plugin": "^5.0.0-beta-02",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^5.2.0",

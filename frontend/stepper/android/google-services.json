@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "877988335066",
+    "project_id": "stepper-402621",
+    "storage_bucket": "stepper-402621.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877988335066:android:b3f7d1c8ba5bfa423444e3",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "877988335066-25cve2m2nb09gu56cb83sl5ca4266oa5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.ionic.starter",
+            "certificate_hash": "19774ff6808d68df7fed777a526d4ee96a1ec7f3"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKFStDNBBH2LTZE9wNT4eJni6_p4t_k4c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

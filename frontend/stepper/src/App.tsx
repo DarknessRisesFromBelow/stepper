@@ -15,6 +15,7 @@ import { heartCircleOutline, walk, trophyOutline } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Login from './pages/login'
+import OneSignal from 'onesignal-cordova-plugin';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -35,7 +36,21 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+
+const OneSignalInit = () => {
+  OneSignal.setAppId("bbb1bb87-4bdb-4dea-845e-22f81f9bc787");
+
+  OneSignal.setNotificationOpenedHandler((jsonData) => {
+    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+  });
+
+  OneSignal.promptForPushNotificationsWithUserResponse((accepted) => {
+    console.log('User accepted notifications: ' + accepted);
+  });
+}
+
 setupIonicReact();
+OneSignalInit();
 
 const App: React.FC = () => (
   <IonApp>
