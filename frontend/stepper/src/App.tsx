@@ -37,7 +37,12 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 
 
-const OneSignalInit = () => {
+
+setupIonicReact();
+
+
+const App: React.FC = () => {
+  const OneSignalInit = () => {
   OneSignal.setAppId("bbb1bb87-4bdb-4dea-845e-22f81f9bc787");
 
   OneSignal.setNotificationOpenedHandler((jsonData) => {
@@ -49,11 +54,11 @@ const OneSignalInit = () => {
   });
 }
 
-setupIonicReact();
-OneSignalInit();
 
-const App: React.FC = () => (
-  <IonApp>
+
+  OneSignalInit();
+
+  return (<IonApp>
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
@@ -83,6 +88,6 @@ const App: React.FC = () => (
       </IonTabs>
     </IonReactRouter>
   </IonApp>
-);
+)};
 
 export default App;
