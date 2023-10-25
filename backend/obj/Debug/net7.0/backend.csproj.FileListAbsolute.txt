@@ -13,3 +13,9 @@ C:\Users\Magshimim\Documents\stepper\backend\obj\Debug\net7.0\refint\backend.dll
 C:\Users\Magshimim\Documents\stepper\backend\obj\Debug\net7.0\backend.pdb
 C:\Users\Magshimim\Documents\stepper\backend\obj\Debug\net7.0\backend.genruntimeconfig.cache
 C:\Users\Magshimim\Documents\stepper\backend\obj\Debug\net7.0\ref\backend.dll
+C:\Users\Magshimim\Documents\stepper\backend\bin\Debug\net7.0\JsonSubTypes.dll
+C:\Users\Magshimim\Documents\stepper\backend\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Magshimim\Documents\stepper\backend\bin\Debug\net7.0\OneSignalApi.dll
+C:\Users\Magshimim\Documents\stepper\backend\bin\Debug\net7.0\Polly.dll
+C:\Users\Magshimim\Documents\stepper\backend\bin\Debug\net7.0\RestSharp.dll
+C:\Users\Magshimim\Documents\stepper\backend\obj\Debug\net7.0\backend.csproj.CopyComplete

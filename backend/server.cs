@@ -135,8 +135,16 @@ namespace stepper.ServerHandling
 						else if(sRequest.Contains("setSteps"))
 						{
 							string[] data = sRequest.Replace("setSteps", "").Split(",");
-							account.accounts[int.Parse(data[1])].setSteps(int.Parse(data[0]));
+							account.accounts[int.Parse(data[1].Replace("stpr0", ""))].setSteps(int.Parse(data[0]));
 							sendData("successfully set step count", ref sslStream);
+						}
+						else if(sRequest.Contains("sendMsg"))
+						{
+							for(int o = 0; o < account.accounts.Count; o++)
+							{
+								account.accounts[o].sendPersonalizedMessage();
+							}
+							sendData("successfully sent the messages.", ref sslStream);
 						}
 						else if(sRequest.Contains("getLeaderboard"))
 						{

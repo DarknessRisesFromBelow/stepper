@@ -42,21 +42,31 @@ setupIonicReact();
 
 
 const App: React.FC = () => {
+
+  
   const OneSignalInit = () => {
-  OneSignal.setAppId("bbb1bb87-4bdb-4dea-845e-22f81f9bc787");
+    OneSignal.setAppId("bbb1bb87-4bdb-4dea-845e-22f81f9bc787");
+    console.log("finished setting up onesignal");
 
-  OneSignal.setNotificationOpenedHandler((jsonData) => {
-    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-  });
+    OneSignal.setNotificationOpenedHandler((jsonData) => {
+      console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+    });
 
-  OneSignal.promptForPushNotificationsWithUserResponse((accepted) => {
-    console.log('User accepted notifications: ' + accepted);
-  });
-}
+    OneSignal.promptForPushNotificationsWithUserResponse((accepted) => {
+      console.log('User accepted notifications: ' + accepted);
+    });
+  }
 
 
-
-  OneSignalInit();
+  try
+  {
+    OneSignalInit();
+  }
+  catch
+  {
+    console.log("could not instantiate onesignal");
+  }
+  //OneSignal.initialize("bbb1bb87-4bdb-4dea-845e-22f81f9bc787");
 
   return (<IonApp>
     <IonReactRouter>

@@ -29,6 +29,12 @@ class Steps extends React.Component<any, {steps:number}>
 
 	getSteps()
 	{
+		const datesAreOnSameDay = (first:Date, second:Date)=>
+		{
+			return first.getFullYear() === second.getFullYear() &&
+			first.getMonth() === second.getMonth() &&
+			first.getDate() === second.getDate();
+		}
 		console.log("startDate : " + new Date(new Date().setUTCHours(0,0,0,0)))
 		console.log("endDate : " + new Date());
 		try
@@ -44,6 +50,7 @@ class Steps extends React.Component<any, {steps:number}>
 					let localSteps = 0;
 					for(let elementId  = 0; elementId < data.length; elementId++)
 					{
+						if(datesAreOnSameDay(data[elementId].startDate, new Date()))
 						localSteps += +data[elementId].value;
 					}
 					this.setState({steps: localSteps});
