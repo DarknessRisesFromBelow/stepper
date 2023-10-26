@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import { Health } from '@ionic-native/health';
 import './steps.css'
 import Wave from './wave'
+import { App } from '@capacitor/app';
+import {BackgroundMode} from '@anuradev/capacitor-background-mode';
 
 class Steps extends React.Component<any, {steps:number}>
 {
@@ -25,6 +27,31 @@ class Steps extends React.Component<any, {steps:number}>
 			},
 		]).then(data => {this.getSteps();});
 		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+	
+		try
+		{
+			BackgroundMode.enable();
+			BackgroundMode.requestDisableBatteryOptimizations();
+
+			App.addListener('backButton', () => {
+				console.log("moving to background and initiating step counting");
+				BackgroundMode.moveToBackground();
+				this.updateStepCount();
+			});
+		}
+		catch
+		{
+			console.log("erorr!erorr!erorr!erorr!");
+		}
+	}
+
+	delay(ms: number){return new Promise( resolve => setTimeout(resolve, ms) );}
+  
+	updateStepCount()
+	{
+		this.getSteps();
+		console.log("starting update schedule");
+		this.delay(1200000).then(res=>this.updateStepCount());
 	}
 
 	getSteps()

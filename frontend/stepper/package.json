@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "@anuradev/capacitor-background-mode": "^2.0.8",
     "@capacitor/android": "^5.5.0",
-    "@capacitor/app": "5.0.6",
+    "@capacitor/app": "^5.0.6",
     "@capacitor/core": "5.5.0",
     "@capacitor/filesystem": "^5.1.4",
     "@capacitor/haptics": "5.0.6",

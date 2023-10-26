@@ -6,21 +6,20 @@ import Steps from '../components/steps'
 import Wave from '../components/wave'
 import OneSignal from 'onesignal-cordova-plugin';
 
-
 const Tab1: React.FC = () => {
 
   useEffect(()=>
   {
     try
     {
-      OneSignal.setExternalUserId(global.uid);    
+      OneSignal.setExternalUserId(global.uid);
     }
     catch
     {
       console.log("could not set external user id for onesignal")
     }
-  }
-  )
+  })
+
 
   return (
     <IonPage>

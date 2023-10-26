@@ -17,6 +17,7 @@ import Tab2 from './pages/Tab2';
 import Login from './pages/login'
 import OneSignal from 'onesignal-cordova-plugin';
 
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -66,7 +67,6 @@ const App: React.FC = () => {
   {
     console.log("could not instantiate onesignal");
   }
-  //OneSignal.initialize("bbb1bb87-4bdb-4dea-845e-22f81f9bc787");
 
   return (<IonApp>
     <IonReactRouter>
