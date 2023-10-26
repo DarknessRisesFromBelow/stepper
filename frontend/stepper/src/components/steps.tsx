@@ -32,6 +32,7 @@ class Steps extends React.Component<any, {steps:number}>
 		{
 			BackgroundMode.enable();
 			BackgroundMode.requestDisableBatteryOptimizations();
+			BackgroundMode.disableWebViewOptimizations();
 
 			App.addListener('backButton', () => {
 				console.log("moving to background and initiating step counting");
@@ -51,7 +52,16 @@ class Steps extends React.Component<any, {steps:number}>
 	{
 		this.getSteps();
 		console.log("starting update schedule");
-		this.delay(1200000).then(res=>this.updateStepCount());
+	}
+
+	updateSteps()
+	{
+		const i = 100;
+		while(i > 1)
+		{
+			//		this.delay(1200).then(res=>this.updateStepCount());		
+			this.delay(1200).then(res=>this.updateStepCount());		
+		}
 	}
 
 	getSteps()
