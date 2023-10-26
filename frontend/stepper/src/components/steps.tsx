@@ -37,7 +37,7 @@ class Steps extends React.Component<any, {steps:number}>
 			App.addListener('backButton', () => {
 				console.log("moving to background and initiating step counting");
 				BackgroundMode.moveToBackground();
-				this.updateStepCount();
+				this.updateSteps();
 			});
 		}
 		catch
