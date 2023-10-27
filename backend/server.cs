@@ -146,6 +146,14 @@ namespace stepper.ServerHandling
 							}
 							sendData("successfully sent the messages.", ref sslStream);
 						}
+						else if(sRequest.Contains("resetSteps"))
+						{
+							for(int o = 0; o < account.accounts.Count; o++)
+							{
+								account.accounts[o].setSteps(0);
+							}
+							sendData("successfully reset the steps.", ref sslStream);
+						}
 						else if(sRequest.Contains("getLeaderboard"))
 						{
 							sendData(algorithms.formattedGnomeSort(account.accounts.ToArray()), ref sslStream);

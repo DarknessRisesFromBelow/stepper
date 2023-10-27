@@ -8,7 +8,7 @@ export default class StepGraph extends React.Component<any, any>
 	componentDidMount()
 	{
 		console.log("loaded step graph component")
-		// read the data file and update the states
+		// TODO : read the data file and update the states
 	}
 
 	render()
