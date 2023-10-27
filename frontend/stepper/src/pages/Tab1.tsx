@@ -5,6 +5,7 @@ import './Tab1.css';
 import Steps from '../components/steps'
 import Wave from '../components/wave'
 import OneSignal from 'onesignal-cordova-plugin';
+import StepGraph from '../components/StepGraph';
 
 const Tab1: React.FC = () => {
 
@@ -25,7 +26,7 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonContent fullscreen>
         <Steps/>
-        <div className="bgcolor"><h1>placeholder for what would probably be graphs</h1></div>
+        <div className="bgcolor"><StepGraph/></div>
       </IonContent>
     </IonPage>
   );
