@@ -92,7 +92,6 @@ class Steps extends React.Component<any, {steps:number}>
 						if(datesAreOnSameDay(data[elementId].startDate, new Date()))
 						localSteps += +data[elementId].value;
 					}
-					writeFile("data/account/steps/stepHistoryData.dat", "sunday, " + localSteps);
 					this.setState({steps: localSteps});
 				})
 			})
@@ -112,6 +111,7 @@ class Steps extends React.Component<any, {steps:number}>
 			const rs = getComputedStyle(r);
 			console.log(rs.getPropertyValue('--stepCount'))
 		}
+		writeFile("data/account/steps/stepHistoryData.dat", "sunday, " + this.state.steps);
 		fetch("https://arriving-strictly-halibut.ngrok-free.app/setSteps" + this.state.steps + "," + global.uid,{method: 'GET',headers: {"ngrok-skip-browser-warning": "69420",},});
 		return <div className="background">
 		<div className="container">

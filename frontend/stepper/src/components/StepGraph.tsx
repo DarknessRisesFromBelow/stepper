@@ -20,6 +20,10 @@ export default class StepGraph extends React.Component<any, {stepsArr: any[]}>
 		{
 			const dat = readFile("data/account/steps/stepHistoryData.dat");
 			console.log(dat);
+			const newSteps = [['day', 'steps']];
+			const newDat = dat.split(',');
+			newSteps.push([newDat[0], newDat[1]]);
+			this.setState({stepsArr: newSteps});
 		}
 		catch
 		{
