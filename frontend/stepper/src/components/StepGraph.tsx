@@ -18,12 +18,14 @@ export default class StepGraph extends React.Component<any, {stepsArr: any[]}>
 
 		try
 		{
-			const dat = readFile("data/account/steps/stepHistoryData.dat");
-			console.log(dat);
-			const newSteps = [['day', 'steps']];
-			const newDat = dat.split(',');
-			newSteps.push([newDat[0], newDat[1]]);
-			this.setState({stepsArr: newSteps});
+			readFile("data/account/steps/stepHistoryData.dat").then(dat=>{
+				console.log(dat);
+				const newSteps:any[] = [['day', 'steps']];
+				const newDat = dat.split(',');
+				newSteps.push([newDat[0], +('' + newDat[1])]);
+				this.setState({stepsArr: newSteps});
+			});
+			
 		}
 		catch
 		{
@@ -35,6 +37,7 @@ export default class StepGraph extends React.Component<any, {stepsArr: any[]}>
 
 	render()
 	{
+		console.log(this.state.stepsArr);
 		const options = {title: "daily performance: ", titleTextStyle: {color: '#fff' },lineWidth: 4, backgroundColor:"#262626", hAxis:{textStyle:{color: '#FFF'}}, vAxis:{textStyle:{color: '#FFF'}},legend: { position: "none" }};
 		const data = this.state.stepsArr;
 		return <div id="chartContainer"><Chart chartType="LineChart" data={data} options={options} height="25vh" width="90vw"/></div>
