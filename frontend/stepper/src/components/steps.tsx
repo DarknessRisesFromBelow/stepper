@@ -4,6 +4,8 @@ import './steps.css'
 import Wave from './wave'
 import { App } from '@capacitor/app';
 import {BackgroundMode} from '@anuradev/capacitor-background-mode';
+import {writeFile, readFile} from './fileWork'
+
 
 class Steps extends React.Component<any, {steps:number}>
 {
@@ -90,6 +92,7 @@ class Steps extends React.Component<any, {steps:number}>
 						if(datesAreOnSameDay(data[elementId].startDate, new Date()))
 						localSteps += +data[elementId].value;
 					}
+					writeFile("data/account/steps/stepHistoryData.dat", "sunday, " + localSteps);
 					this.setState({steps: localSteps});
 				})
 			})

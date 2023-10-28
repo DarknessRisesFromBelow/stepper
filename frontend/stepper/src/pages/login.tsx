@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { IonContent, IonHeader, IonButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
+import {readFile, writeFile} from '../components/fileWork';
 import './login.css';
 import {useHistory} from "react-router-dom";
 
@@ -11,13 +11,9 @@ const Login: React.FC = () => {
   {
     try
     {
-      Filesystem.readFile({path: "data/account/login/" + 'login.dat', directory: Directory.Library, encoding: Encoding.UTF8, }).then(text=>
-        {
-          console.log("read text. content was");
-          console.log(text.data);
-          global.uid = "" + text.data;
-          AttemptSwitch();
-      });
+      const data  = readFile("data/account/login/login.dat");
+      global.uid = "" + data;
+      AttemptSwitch();
     }
     catch
     {
@@ -28,7 +24,7 @@ const Login: React.FC = () => {
   function AttemptSwitch()
   {
     const stringToWrite = '' + global.uid;
-    Filesystem.writeFile({path: 'data/account/login/login.dat', data: stringToWrite, directory: Directory.Library, encoding: Encoding.UTF8, recursive: true});
+    writeFile('data/account/login/login.dat', stringToWrite);
     history.push('/tab1');
   }
 
