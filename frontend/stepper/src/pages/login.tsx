@@ -11,9 +11,10 @@ const Login: React.FC = () => {
   {
     try
     {
-      const data  = readFile("data/account/login/login.dat");
-      global.uid = "" + data;
-      AttemptSwitch();
+      readFile("data/account/login/login.dat").then(dat=>{
+        global.uid = "" + dat;
+        AttemptSwitch();
+      });
     }
     catch
     {
